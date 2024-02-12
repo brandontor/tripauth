@@ -15,6 +15,16 @@ interface RootLayoutProps {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url.base),
+  applicationName: "PWA APP",
+  manifest: "../public/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "PWA APP",
+  },
+  formatDetection: {
+    telephone: true,
+  },
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -61,12 +71,17 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
+  minimumScale: 1,
+  initialScale: 1,
+  width: "device-width",
+  userScalable: false,
+  viewportFit: "cover",
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head content="" />
       <body
         className={cn(
           "min-h-screen bg-background antialiased",
