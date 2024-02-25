@@ -6,6 +6,8 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { ModeToggle } from "@/components/mode-toggle"
 
+import Navigator from "./components/Navigator"
+
 export default function Home() {
   return (
     <main className="flex h-screen items-center justify-center">
@@ -16,6 +18,7 @@ export default function Home() {
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
           {siteConfig.description}
         </p>
+        <Navigator></Navigator>
       </div>
     </main>
   )
